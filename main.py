@@ -2,11 +2,14 @@
 import os
 import jinja2
 import webapp2
+from time import razlika
+import datetime
 
 
 template_dir = os.path.join(os.path.dirname(__file__), "templates")
 jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader(template_dir), autoescape=False)
 
+igor = datetime(1983, 5, 6, 9, 45)
 
 class BaseHandler(webapp2.RequestHandler):
 
@@ -29,7 +32,14 @@ class BaseHandler(webapp2.RequestHandler):
 
 class MainHandler(BaseHandler):
     def get(self):
-        return self.render_template("hello.html")
+        para = razlika(igor)
+        params = {"sporocilo": "Tukaj sem tudi jaz, MainHandler",
+                  "let": para.years,
+                  "mesec": para.months,
+                  "dni":para.days}
+
+        return self.render_template("hello.html", params=params)
+
 
 app = webapp2.WSGIApplication([
     webapp2.Route('/', MainHandler),
