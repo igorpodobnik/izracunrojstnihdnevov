@@ -1,3 +1,18 @@
-body {
+div {
+background-color: white;
+font-size:60px;
+position: fixed; /* or absolute */
+top: 10%;
+left: 35%;
+margin-top: -75px;
+margin-left: -200px;
 
+}
+
+
+
+ul
+{
+    list-style-type: none;
+    left:50%;
 }

@@ -2,14 +2,16 @@
 import os
 import jinja2
 import webapp2
-from time import razlika
-import datetime
+from datetime import *
+from dateutil.relativedelta import *
 
 
 template_dir = os.path.join(os.path.dirname(__file__), "templates")
 jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader(template_dir), autoescape=False)
 
 igor = datetime(1983, 5, 6, 9, 45)
+now = datetime.now()
+
 
 class BaseHandler(webapp2.RequestHandler):
 
@@ -32,13 +34,16 @@ class BaseHandler(webapp2.RequestHandler):
 
 class MainHandler(BaseHandler):
     def get(self):
-        para = razlika(igor)
+        para = relativedelta(now,igor)
         params = {"sporocilo": "Tukaj sem tudi jaz, MainHandler",
                   "let": para.years,
                   "mesec": para.months,
-                  "dni":para.days}
+                  "dni":para.days,
+                  "ur": para.hours,
+                  "minut": para.minutes
+                  }
 
-        return self.render_template("hello.html", params=params)
+        self.render_template("hello.html", params=params)
 
 
 app = webapp2.WSGIApplication([
