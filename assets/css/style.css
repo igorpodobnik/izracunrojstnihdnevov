@@ -1,12 +1,12 @@
-div {
-background-color: white;
-font-size:60px;
-position: fixed; /* or absolute */
-top: 10%;
-left: 35%;
-margin-top: -75px;
-margin-left: -200px;
 
+
+div {
+    margin-left:auto;
+    margin-right:auto;
+    height:auto; 
+    width:auto;
+    font-family:"Comic Sans MS", cursive, sans-serif;
+    font-size:60px
 }
 
 

@@ -5,18 +5,46 @@
     <title>Izracun starosti</title>
 
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="http://domain.tld/mobile.css" type="text/css" media="handheld" />
 </head>
 <body>
 
-    <div>
-        <h1>Stari, star si:</h1>
+    <div id="igor">
+        <h1>Igor je v tem trenutku star:</h1>
         <ul>
-            <li>Star si:</li>
             <li>{{ let }} let</li>
             <li>{{ mesec }} mesecev</li>
             <li>{{ dni }} dni</li>
             <li>{{ ur }} ur</li>
             <li>{{ minut }} minut</li>
+        </ul>
+    </div>
+    <div id="marusa">
+        <h1>Maruša je v tem trenutku stara:</h1>
+        <ul>
+            <li>26 let</li>
+        </ul>
+    </div>
+    <div id="obletnica">
+        <h1>Do obletnice je se:</h1>
+        <ul>
+            <li>{{ obletnica }} dni</li>
+        </ul>
+    </div>
+    <div id="jani">
+        <h1>Jani je v tem trenutku star:</h1>
+        <ul>
+            <li>{{ let_jani }} let</li>
+            <li>{{ mesec_jani }} mesecev</li>
+            <li>{{ dni_jani }} dni</li>
+            <li>{{ ur_jani }} ur</li>
+            <li>{{ minut_jani }} minut</li>
+        </ul>
+    </div>
+    <div id="dorojdneva">
+        <h1>Do Janijevega roj. dneva je se:</h1>
+        <ul>
+            <li>{{ dorojdneva }} dni</li>
         </ul>
     </div>
 </body>

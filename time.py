@@ -51,29 +51,3 @@ print koncno.years
 print koncno.months
 print koncno.days
 
-"""
-datum1 = datetime(2014,7,6)
-datum2 = datetime(2014,6,7)
-datum3 = datetime(2014,2,2)
-Razlika = relativedelta(now, igor)
-raz1 = relativedelta(datum1,datum2)
-raz2 = relativedelta(datum1,datum3)
-print raz1
-print raz1.years
-print raz2
-print Razlika
-
-print Razlika.years
-print Razlika.months
-print Razlika.days
-
-"""
-
-"""
-print now
-print hm
-
-
-hehe = relativedelta(datetime(2003, 10, 24, 10, 0),today)
-print hehe
-"""
