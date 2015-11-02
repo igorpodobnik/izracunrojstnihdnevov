@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Izracun starosti</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style_mobile.css" type="text/css" media="handheld" />
+    <link rel="stylesheet" type="text/css" media="only screen and (max-device-width: 480px)" href="../assets/css/style_mobile.css" />
+</head>
+<body>
+
+
+    <div id="all">
+        <h1>seznam</h1>
+        <ul>
+            <li>{{ igor }} dni</li>
+            <li>{{ marusa }} dni</li>
+            <li>{{ params }} param</li>
+
+        </ul>
+    </div>
+    <dl>
+      {% for key, value in params.items() %}
+            <dt>{{ key }}</dt>
+            <dd>{{ value }}</dd>
+      {% endfor %}
+    </dl>
+
+
+
+</body>
+</html>

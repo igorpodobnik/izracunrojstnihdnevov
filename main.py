@@ -5,7 +5,7 @@ import webapp2
 from datetime import *
 from dateutil.relativedelta import *
 from obletnica import *
-
+from seznam_main import build1
 template_dir = os.path.join(os.path.dirname(__file__), "templates")
 jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader(template_dir), autoescape=False)
 
@@ -57,7 +57,14 @@ class MainHandler(BaseHandler):
 
         self.render_template("hello.html", params=params)
 
+class seznamHandler(BaseHandler):
+    def get(self):
+        params = build1()
+        print params
+        print "zgoraj"
+        self.render_template("timelist.html", params=params)
 
 app = webapp2.WSGIApplication([
     webapp2.Route('/', MainHandler),
+    webapp2.Route('/seznam', seznamHandler),
 ], debug=True)
