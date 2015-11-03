@@ -14,16 +14,16 @@
     <div id="all">
         <h1>seznam</h1>
         <ul>
-            <li>{{ igor }} dni</li>
-            <li>{{ marusa }} dni</li>
-            <li>{{ params }} param</li>
+
+
 
         </ul>
     </div>
     <dl>
-      {% for key, value in params.items() %}
-            <dt>{{ key }}</dt>
-            <dd>{{ value }}</dd>
+      {% for item in stevilke.items() %}
+            <dt>{{item.0}} is the key for the value {{ item.1 }}</dt>
+            <dt></dt>
+
       {% endfor %}
     </dl>
 

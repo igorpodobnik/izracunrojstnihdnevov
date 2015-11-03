@@ -10,7 +10,7 @@ igor = date(1983,5,6)
 marusa = date(1984,5,4)
 
 
-list = [igor,marusa]
+lista = [igor,marusa]
 diction = {}
 temp_diction = {}
 
@@ -25,11 +25,12 @@ def item(ime):
 #Buildanje seznama
 
 def build1():
-    for i in list:
+    for i in lista:
         #print i
         print "zagnal se je build"
         item(i)
     #sorted(diction.items(), key=lambda x: x[1])
+    #diction.update({"_kljuc":lista})
     return diction
 
 #ime od spremeljivke.

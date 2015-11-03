@@ -9,10 +9,15 @@ from seznam_main import build1
 template_dir = os.path.join(os.path.dirname(__file__), "templates")
 jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader(template_dir), autoescape=False)
 
+
+
 igor = datetime(1983, 5, 6, 9, 45)
 now = datetime.now()
 jani = datetime(1947,8,25,6,00)
 janidat = date(1947,8,25)
+
+
+
 # html fonti http://www.w3schools.com/cssref/css_websafe_fonts.asp
 # dateutil link https://labix.org/python-dateutil
 class BaseHandler(webapp2.RequestHandler):
@@ -31,8 +36,8 @@ class BaseHandler(webapp2.RequestHandler):
         if not params:
             params = {}
         template = jinja_env.get_template(view_filename)
+        #return self.response.out.write(template.render(params),template.render(my_list))
         return self.response.out.write(template.render(params))
-
 
 class MainHandler(BaseHandler):
     def get(self):
@@ -55,14 +60,20 @@ class MainHandler(BaseHandler):
                   "dorojdneva" : dorojdneva
                   }
 
-        self.render_template("hello.html", params=params)
+        self.render_template("hello.html", params=params,)
 
 class seznamHandler(BaseHandler):
     def get(self):
+        igor = date(1983,5,6)
+        marusa = date(1984,5,4)
+        lista = [igor,marusa]
         params = build1()
         print params
         print "zgoraj"
-        self.render_template("timelist.html", params=params)
+        #self.render_template("timelist.html", params=params, my_list=lista)
+        self.render_template("timelist.html", params={
+            "stevilke": params
+        })
 
 app = webapp2.WSGIApplication([
     webapp2.Route('/', MainHandler),
