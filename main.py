@@ -36,7 +36,6 @@ class BaseHandler(webapp2.RequestHandler):
         if not params:
             params = {}
         template = jinja_env.get_template(view_filename)
-        #return self.response.out.write(template.render(params),template.render(my_list))
         return self.response.out.write(template.render(params))
 
 class MainHandler(BaseHandler):
@@ -64,9 +63,6 @@ class MainHandler(BaseHandler):
 
 class seznamHandler(BaseHandler):
     def get(self):
-        igor = date(1983,5,6)
-        marusa = date(1984,5,4)
-        lista = [igor,marusa]
         params = build1()
         print params
         print "zgoraj"
